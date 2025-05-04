@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: medusa-backend
+    env: node
+    plan: free
+    buildCommand: yarn install
+    startCommand: yarn start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MEDUSA_ADMIN_CORS
+        value: '*'
+      - key: MEDUSA_STORE_CORS
+        value: '*'
+      - key: DATABASE_URL
+        value: your_database_url_here
